@@ -361,7 +361,11 @@ function Zksync() {
       render: (text) => {
         const displayText = hideColumn ? text.slice(0, 4) + "***" + text.slice(-4) : text;
         return (
-          <Paragraph copyable={{ text }} style={{ whiteSpace: "nowrap", margin: 0 }}>
+          <Paragraph
+            copyable={{ text }}
+            style={{ whiteSpace: "nowrap", margin: 0, cursor: "pointer" }}
+            onClick={() => window.open(`https://debank.com/profile/${text}`)}
+          >
             {displayText}
           </Paragraph>
         );
